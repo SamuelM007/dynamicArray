@@ -9,7 +9,7 @@ public class DynamicStringList implements StringList{
 
     @Override
     public String get(int index) {
-        if(index >= size){
+        if(index >= size || index < 0){
             throw new IndexOutOfBoundsException("current size:" + size);
         }
         return arr[index];
@@ -17,7 +17,7 @@ public class DynamicStringList implements StringList{
 
     @Override
     public void set(int index, String value) {
-        if(index >= size){
+        if(index >= size || index < 0){
             throw new IndexOutOfBoundsException("current size:" + size);
         }
         arr[index] = value;
@@ -35,7 +35,7 @@ public class DynamicStringList implements StringList{
 
     @Override
     public String remove(int index) {
-        if(index >= size){
+        if(index >= size || index < 0){
             throw new IndexOutOfBoundsException("current size:" + size);
         }
         String temp = arr[index];
