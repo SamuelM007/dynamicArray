@@ -33,8 +33,14 @@ public class DynamicStringList implements StringList{
 
     @Override
     public String remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if(index >= size){
+            throw new IndexOutOfBoundsException("current size:" + size);
+        }
+        String temp = arr[index];
+        for(int i = index; i<size-1;i++){
+            arr[i] = arr[i+1];
+        }
+        return temp;
     }
 
     @Override
