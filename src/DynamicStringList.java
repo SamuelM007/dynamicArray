@@ -1,9 +1,9 @@
 public class DynamicStringList implements StringList{
-    private int[] arr;
+    private String[] arr;
     private int size;
 
     public DynamicStringList(){
-        arr = new int[10];
+        arr = new String[10];
         size = 0;
     }
 
@@ -46,7 +46,7 @@ public class DynamicStringList implements StringList{
     }
 
     private void expand(){
-        int[] temp = new int[arr.length * 2];
+        String[] temp = new String[arr.length * 2];
 
         for(int i = 0; i < arr.length; i++){
             temp[i] = arr[i];
