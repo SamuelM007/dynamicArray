@@ -9,8 +9,10 @@ public class DynamicStringList implements StringList{
 
     @Override
     public String get(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        if(index > size){
+            throw new IndexOutOfBoundsException("current size:" + size);
+        }
+        return arr[index];
     }
 
     @Override
