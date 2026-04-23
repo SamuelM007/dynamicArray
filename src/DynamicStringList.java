@@ -40,4 +40,13 @@ public class DynamicStringList implements StringList{
     public int capacity() {
         return arr.length;
     }
+
+    private void expand(){
+        int[] temp = new int[arr.length * 2];
+
+        for(int i = 0; i < arr.length; i++){
+            temp[i] = arr[i];
+        }
+        arr = temp;
+    }
 }
