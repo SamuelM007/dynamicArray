@@ -9,7 +9,7 @@ public class DynamicStringList implements StringList{
 
     @Override
     public String get(int index) {
-        if(index > size){
+        if(index >= size){
             throw new IndexOutOfBoundsException("current size:" + size);
         }
         return arr[index];
