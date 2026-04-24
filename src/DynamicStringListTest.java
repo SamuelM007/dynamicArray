@@ -99,5 +99,18 @@ public class DynamicStringListTest {
         assertEquals("Test999", actual);
     }
 
+    @Test
+    public void removeTest(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<10;i++){
+            list.add("Test"+i);
+        }
+
+        list.remove(0);
+        String actual = list.get(0);
+        assertEquals("Test1", actual);
+    }
+
     
 }
