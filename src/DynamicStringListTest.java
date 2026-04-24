@@ -20,5 +20,31 @@ public class DynamicStringListTest {
 
     }
 
+    @Test
+    public void setTest(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<10;i++){
+            list.add("Test"+i);
+        }
+
+        list.set(1, "Test10");
+        String actual = list.get(1);
+
+        assertEquals("Test10", actual);
+    }
+
+    @Test
+    public void setExceptionTest(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<10;i++){
+            list.add("Test"+i);
+        }
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.set(10000, "TestException");
+        });
+    }
+
     
 }
