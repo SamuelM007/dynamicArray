@@ -58,5 +58,24 @@ public class DynamicStringListTest {
         });
     }
 
+    @Test
+    public void addTest(){
+        DynamicStringList list = new DynamicStringList();
+        list.add("Test");
+        String actual = list.get(0);
+        assertEquals("Test", actual);
+    }
+
+    @Test
+    public void add1000Test(){
+        DynamicStringList list = new DynamicStringList();
+        for(int i = 0; i < 1000; i++){
+            list.add("Test"+i);
+        }
+
+        String actual = list.get(999);
+        assertEquals("Test999", actual);
+    }
+
     
 }

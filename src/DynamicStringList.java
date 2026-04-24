@@ -6,7 +6,6 @@ public class DynamicStringList implements StringList{
         arr = new String[10];
         size = 0;
     }
-
     @Override
     public String get(int index) {
         if(index >= size || index < 0){
