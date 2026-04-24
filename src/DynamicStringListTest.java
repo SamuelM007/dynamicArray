@@ -21,6 +21,28 @@ public class DynamicStringListTest {
     }
 
     @Test
+    public void TestGetNegativeValue(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<10;i++){
+            list.add("Test"+i);
+        }
+
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.get(-1);
+        });
+    }
+
+    @Test
+    public void TestGetOutOfBoundsValue(){
+        DynamicStringList list = new DynamicStringList();        
+
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.get(Integer.MAX_VALUE);
+        });
+    }
+
+    @Test
     public void setTest(){
         DynamicStringList list = new DynamicStringList();
 
