@@ -132,7 +132,7 @@ public class DynamicStringListTest {
             list.add("Test"+i);
         }
         for(int i = 200; i > 160; i--){
-            list.remove(i);
+            list.remove(i-1);
         }
 
         int actual = list.size();
@@ -165,7 +165,7 @@ public class DynamicStringListTest {
             list.add("Test"+i);
         }
 
-        int actual = list.size();
+        int actual = list.capacity();
         assertEquals(40,actual);
     }
 
@@ -177,10 +177,10 @@ public class DynamicStringListTest {
             list.add("Test"+i);
         }
         for(int i = 161; i > 80; i--){
-            list.remove(i);
+            list.remove(i-1);
         }
 
-        int actual = list.size();
+        int actual = list.capacity();
         assertEquals(320,actual);
     }
 
@@ -198,7 +198,7 @@ public class DynamicStringListTest {
             list.add("Test"+i);
         }
 
-        int actual = list.size();
+        int actual = list.capacity();
         assertEquals(640,actual);
     }
 
