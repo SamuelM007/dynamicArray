@@ -112,5 +112,97 @@ public class DynamicStringListTest {
         assertEquals("Test1", actual);
     }
 
+    @Test
+    public void TestSize40(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<40;i++){
+            list.add("Test"+i);
+        }
+
+        int actual = list.size();
+        assertEquals(40,actual);
+    }
+
+    @Test
+    public void TestSize160(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<200;i++){
+            list.add("Test"+i);
+        }
+        for(int i = 200; i > 160; i--){
+            list.remove(i);
+        }
+
+        int actual = list.size();
+        assertEquals(160,actual);
+    }
+
+    @Test
+    public void TestSize320(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<320;i++){
+            list.add("Test"+i);
+        }
+        for(int i = 0; i < 160; i++){
+            list.remove(i);
+        }
+        for(int i = 160; i<320; i++){
+            list.add("Test"+i);
+        }
+
+        int actual = list.size();
+        assertEquals(320,actual);
+    }
+
+    @Test
+    public void TestCapacity21(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<21;i++){
+            list.add("Test"+i);
+        }
+
+        int actual = list.size();
+        assertEquals(40,actual);
+    }
+
+    @Test
+    public void TestCapacity161(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<161;i++){
+            list.add("Test"+i);
+        }
+        for(int i = 161; i > 80; i--){
+            list.remove(i);
+        }
+
+        int actual = list.size();
+        assertEquals(320,actual);
+    }
+
+    @Test
+    public void TestCapacity321(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<321;i++){
+            list.add("Test"+i);
+        }
+        for(int i = 0; i < 160; i++){
+            list.remove(i);
+        }
+        for(int i = 160; i<320; i++){
+            list.add("Test"+i);
+        }
+
+        int actual = list.size();
+        assertEquals(640,actual);
+    }
+
+
+
     
 }
