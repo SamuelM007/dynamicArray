@@ -46,5 +46,17 @@ public class DynamicStringListTest {
         });
     }
 
+    @Test
+    public void setExceptionTest2(){
+        DynamicStringList list = new DynamicStringList();
+
+        for(int i = 0; i<10;i++){
+            list.add("Test"+i);
+        }
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.set(-1, "TestException");
+        });
+    }
+
     
 }
